@@ -32,7 +32,7 @@ It's important to note that other makers may be using the same topics at the sam
 
 ### `makers/challenge/tokens`
 
-Subscribe to this topic to get an `answerToken`. Tokens are automatically published by MakerBot every 30 seconds and are valid for 60 minutes. You'll use this token when publishing your puzzle answer.
+Subscribe to this topic to get an `answerToken`. Tokens are automatically published by MakerBot every 20 seconds and are valid for 10 minutes. You'll use this token when publishing your puzzle answer.
 
 **Example message:**
 
