@@ -1,8 +1,8 @@
 # PubSub with JavaScript on AWS
 
-In this activity, you'll use *JavaScript*, *nodeJS* and the *AWS JavaScript IoT SDK* to subcribe and publish to multiple AWS topics in order to solve a riddle.
+In this activity, you'll use *JavaScript*, *nodeJS* and the *AWS JavaScript IoT SDK* to subcribe and publish to multiple AWS topics in order to solve a puzzle.
 
-After solving the riddle, you'll be added to the **PubSub Hall of Fame** and your team will be notified of your great success on Slack :D
+After solving the puzzle, you'll be added to the **PubSub Hall of Fame** and your team will be notified of your great success on Slack :D
 
 
 ## Prerequisites
@@ -18,7 +18,7 @@ The following activities are recommended before attempting this one:
 2. Add the certificates you generated from the prerequisite activity [Create a Thing on AWS Dashboard] to the `certificates` folder in your activity directory, and link to them in `lib/publish.js` and `lib/subscribe.js`
 3. Make sure you have installed *nodeJS* and *npm*
 5. To install the AWS IoT JavaScript SDK and nodemon, run `npm install` in the activity folder.
-6. In your favorite text editor, open `lib/subscribe.js` and `lib/publish.js` We've added some code to get you started, and you need to write the publish and subscribe code to help you solve the riddle and submit your solution.
+6. In your favorite text editor, open `lib/subscribe.js` and `lib/publish.js` We've added some code to get you started, and you need to write the publish and subscribe code to help you solve the puzzle and submit your solution.
 7. Run your subscribe and publish scripts with `node lib/subscribe.js` and `node lib/publish.js`
 
 *nodemon?*
@@ -32,7 +32,7 @@ It's important to note that other makers may be using the same topics at the sam
 
 ### `makers/challenge/tokens`
 
-Subscribe to this topic to get an `answerToken`. Tokens are automatically published by MakerBot every 30 seconds and are valid for 60 minutes. You'll use this token when publishing your riddle answer.
+Subscribe to this topic to get an `answerToken`. Tokens are automatically published by MakerBot every 30 seconds and are valid for 60 minutes. You'll use this token when publishing your puzzle answer.
 
 **Example message:**
 
@@ -45,7 +45,7 @@ Subscribe to this topic to get an `answerToken`. Tokens are automatically publis
 
 ### `makers/challenge/clues`
 
-Subscribe to this topic to get clues to help you solve the riddle. Clues are published by MakerBot every 30 seconds. There are 6 clues to the riddle, but you might not need all of them to figure it out.
+Subscribe to this topic to get clues to help you solve the puzzle. Clues are published by MakerBot every 30 seconds. There are 6 clues to the puzzle, but you might not need all of them to figure it out.
 
 **Example message:**
 
@@ -58,7 +58,7 @@ Subscribe to this topic to get clues to help you solve the riddle. Clues are pub
 
 ### `makers/challenge/answers`
 
-Publish to this topic to submit an answer to the riddle. You'll need to include a valid `answerToken` as well as your answer. It's recommended that you don't subscribe to this channel unless you want to see other maker's answer attempts, which may spoil the riddle.
+Publish to this topic to submit an answer to the puzzle. You'll need to include a valid `answerToken` as well as your answer. It's recommended that you don't subscribe to this channel unless you want to see other maker's answer attempts, which may spoil the puzzle.
 
 **Example message:**
 
@@ -95,13 +95,13 @@ Subscribe to this topic to be notified when your answer is accepted as correct.
 
     {
       "answererName": "Alan Turing",
-      "result": "Congratulations, you solved the riddle!"
+      "result": "Congratulations, you solved the puzzle!"
     }
 
 
 ## Activity strategy
 
-Since you probably want to see incoming messages all the time, but only publish a message once you've solved the riddle, the code is split into two files `lib/subscribe.js` and `lib/publish.js`, which means you'll want to run two separate terminal tabs.
+Since you probably want to see incoming messages all the time, but only publish a message once you've solved the puzzle, the code is split into two files `lib/subscribe.js` and `lib/publish.js`, which means you'll want to run two separate terminal tabs.
 
 In practice, a single script will both publish and subscribe via the same `device` object, so this separation is simply to make the activity easier.
 
