@@ -14,11 +14,11 @@ The following activities are recommended before attempting this one:
 
 ## Getting started
 
-1. Using git, clone this repo onto your local machine, then checkout your own personal branch named after your GitHub username. `git checkout -b myGitHubUsername`
+1. Using git, clone this repo onto your local machine, then checkout your own personal branch named after your GitHub username. `git checkout -b makers/myGitHubUsername`
 2. Add the certificates you generated from the prerequisite activity [Create a Thing on AWS Dashboard] to the `certificates` folder in your activity directory, and link to them in `lib/publish.js` and `lib/subscribe.js`
 3. Make sure you have installed *nodeJS* and *npm*
 5. To install the AWS IoT JavaScript SDK and nodemon, run `npm install` in the activity folder.
-6. In your favorite text editor, open `lib/subscribe.js` and `lib/publish.js` We've added some code to get you started, and you need to write the publish and subscribe code to help you solve the puzzle and submit your solution.
+6. In your favorite text editor, open `lib/subscribe.js` and `lib/publish.js` We've added some code to get you started, and you need to write the publish and subscribe code to help you solve the puzzle.
 7. Run your subscribe and publish scripts with `node lib/subscribe.js` and `node lib/publish.js`
 
 *nodemon?*
@@ -112,7 +112,7 @@ We're using *nodemon*, so you can boot up each script once and it will auto-relo
 
 We're here to help! If you get stuck, please ask for help on Make Slack in your team channel and tag a Make Master, @dan or @nic. You can also DM us, but it's more useful to keep comms public so that other team members can benefit too.
 
-You can also `git checkout solution` to see a working solution, but you probably don't want to do that until you've solved it yourself ;)
+You can also `git checkout play` to play with fully working code, but you likely want to try write your own version first :)
 
 
 ## Resources and further reading
