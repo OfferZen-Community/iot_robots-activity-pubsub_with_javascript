@@ -17,11 +17,9 @@ The following activities are recommended before attempting this one:
 1. Using git, clone this repo onto your local machine, then checkout your own personal branch named after your GitHub username. `git checkout -b makers/myGitHubUsername`
 2. Add the certificates you generated from the prerequisite activity [Create a Thing on AWS Dashboard] to the `certificates` folder in your activity directory, and link to them in `lib/publish.js` and `lib/subscribe.js`
 3. Make sure you have installed *nodeJS* and *npm*
-5. To install the AWS IoT JavaScript SDK and nodemon, run `npm install` in the activity folder.
+5. To install the AWS IoT JavaScript SDK, run `npm install` in the activity folder.
 6. In your favorite text editor, open `lib/subscribe.js` and `lib/publish.js` We've added some code to get you started, and you need to write the publish and subscribe code to help you solve the puzzle.
 7. Run your subscribe and publish scripts with `node lib/subscribe.js` and `node lib/publish.js`
-
-*nodemon?*
 
 
 ## Messages and Topics
@@ -103,9 +101,7 @@ Subscribe to this topic to be notified when your answer is accepted as correct.
 
 Since you probably want to see incoming messages all the time, but only publish a message once you've solved the puzzle, the code is split into two files `lib/subscribe.js` and `lib/publish.js`, which means you'll want to run two separate terminal tabs.
 
-In practice, a single script will both publish and subscribe via the same `device` object, so this separation is simply to make the activity easier.
-
-We're using *nodemon*, so you can boot up each script once and it will auto-reload when you update the source code.
+In practice, a single script will both publish and subscribe via the same `device` object, so this separation is simply to make the activity easier. Don't forget to restart the node processes after you edit the source files!
 
 
 ## Having issues?
@@ -120,4 +116,4 @@ You can also `git checkout play` to play with fully working code, but you likely
 - AWS JavaScript SDK Documentation
 - NodeJS installation instructions
 - JSON guide
-- Nodemon info
+
