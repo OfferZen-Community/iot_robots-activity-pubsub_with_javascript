@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Test page</title>
+</head>
+
+<body>
+    <div>This is a test div</div>
+    <div id="content"></div>
+    <button onclick='testPublish()'>Im a button</button>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+      <script type="text/javascript">
+    window.addEventListener("devicemotion", handleMotion, true);
+    var lastEvent;
+
+    setInterval(function testPublish() {
+        $.ajax({
+            type: "POST",
+            url: '/publish',
+            data: JSON.stringify(lastEvent),
+            contentType: "application/json; charset=utf-8",
+            // data: JSON.stringify({x: 1, y: 1})
+        });
+    }, 500);
+
+    function handleMotion(event) {
+        var x = event.accelerationIncludingGravity.x;
+        var y = event.accelerationIncludingGravity.y;
+        var z = event.accelerationIncludingGravity.z;
+
+        lastEvent = {x,y,z}
+
+        $('#content').html(`<h2>{x: ${x.toFixed(2)}, y: ${y.toFixed(2)}, z: ${z.toFixed(2)} }</h2>`)
+    }
+    </script>
+</body>
+
+</html>
