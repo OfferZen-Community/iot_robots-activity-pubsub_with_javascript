@@ -15,17 +15,31 @@
     crossorigin="anonymous"></script>
       <script type="text/javascript">
     window.addEventListener("devicemotion", handleMotion, true);
+
+    setInterval(function () {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            lastPosition = {
+                longitude: position.coords.longitude,
+                latitude: position.coords.latitude,
+            }
+        })
+    } , 5000)
+
     var lastEvent;
+    var lastPosition;
 
     setInterval(function testPublish() {
         $.ajax({
             type: "POST",
             url: '/publish',
-            data: JSON.stringify(lastEvent),
+            data: JSON.stringify({
+                acceleration: lastEvent,
+                location: lastPosition
+            }),
             contentType: "application/json; charset=utf-8",
             // data: JSON.stringify({x: 1, y: 1})
         });
-    }, 500);
+    }, 250);
 
     function handleMotion(event) {
         var x = event.accelerationIncludingGravity.x;

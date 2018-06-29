@@ -14,19 +14,20 @@ const device = awsIot.device({
       host: 'a2yujzh40clf9c.iot.us-east-2.amazonaws.com'
 });
 
-device.on('connect', () => {
-  console.log('Publisher client connected to AWS IoT cloud.\n');
-
-  device.publish('divashenTopic', JSON.stringify({
-    testMessage: "SomeMessage"
-  }));
-});
-
 app.use(bodyParser.json())
+
+var deviceConnected = false
+device.on('connect', () => {
+  deviceConnected = true
+})
 
 app.use('/', express.static(path.join(__dirname, 'public')))
 app.post('/publish', function(request, response) {
-  console.log(request.body)
+  if(deviceConnected) {
+    // console.log('Publisher client connected to AWS IoT cloud.\n');
+    console.log(request.body)
+    device.publish('divashenTopic', JSON.stringify(request.body));
+  }
   response.send('Shot dude')
 })
 app.listen(3000, () => console.log('Example app listening on port 5000!'))
