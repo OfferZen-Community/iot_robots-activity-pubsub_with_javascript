@@ -106,7 +106,7 @@ In practice, a single script will both publish and subscribe via the same `devic
 
 ## Need a hand?
 
-We're here to help! If you get stuck, please ask for help on Make Slack in your team channel and tag a Make Master, @dan or @nic. You can also DM us, but it's more useful to keep comms public so that other team members can benefit too.
+We're here to help! If you get stuck, please ask for help on Make Slack in your team channel and tag your Make Master @dan. You can also DM us, but it's more useful to keep comms public so that other team members can benefit too.
 
 You can also `git checkout play` to play with fully working code, but you likely want to try write your own version first :)
 
