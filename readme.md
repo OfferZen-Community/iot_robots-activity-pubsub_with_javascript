@@ -8,8 +8,8 @@ After solving the puzzle, you'll be added to the **PubSub Hall of Fame** and you
 ## Prerequisites
 
 The following activities are recommended before attempting this one:
-- [Create a Thing on AWS dashboard]
-- [PubSub via AWS dashboard]
+- [Create a Thing on AWS dashboard](https://github.com/OfferZen-Make/iot_robots-activity-create_aws_thing)
+- [PubSub via AWS dashboard](https://github.com/OfferZen-Make/iot_robots-pub_sub_via_aws_dashboard)
 
 
 ## Getting started
