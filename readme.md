@@ -15,7 +15,7 @@ The following activities are recommended before attempting this one:
 ## Getting started
 
 1. Using git, clone this repo onto your local machine, then checkout your own personal branch named after your GitHub username. `git checkout -b makers/myGitHubUsername`
-2. Add the certificates you generated from the prerequisite activity [Create a Thing on AWS Dashboard] to the `certificates` folder in your activity directory, and link to them in `lib/publish.js` and `lib/subscribe.js`
+2. Add the certificates you generated from the prerequisite activity [Create a Thing on AWS Dashboard](https://github.com/OfferZen-Make/iot_robots-activity-create_aws_thing) to the `certificates` folder in your activity directory, and link to them in `lib/publish.js` and `lib/subscribe.js`
 3. Make sure you have installed *nodeJS* and *npm*
 5. To install the AWS IoT JavaScript SDK, run `npm install` in the activity folder.
 6. In your favorite text editor, open `lib/subscribe.js` and `lib/publish.js` We've added some code to get you started, and you need to write the publish and subscribe code to help you solve the puzzle.
